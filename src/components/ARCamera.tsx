@@ -102,11 +102,13 @@ const ARCamera: React.FC<ARCameraProps> = ({ className = '' }) => {
             }}
           />
           {isARActive && detectedPoses.length > 0 && (
-            <ARGlasses
-              keypoints={detectedPoses[0].keypoints}
-              canvasWidth={canvasWidth}
-              canvasHeight={canvasHeight}
-            />
+              <div className="absolute inset-0 z-10">
+              <ARGlasses
+                keypoints={detectedPoses[0].keypoints}
+                canvasWidth={canvasWidth}
+                canvasHeight={canvasHeight}
+              />
+            </div>
           )}
         </div>
         
