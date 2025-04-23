@@ -66,11 +66,9 @@ const ARGlasses: React.FC<ARGlassesProps> = ({ keypoints, canvasWidth, canvasHei
     const loader = new GLTFLoader();
     
     // Try multiple paths to find the model
-    const modelPaths = [
+    const modelPaths = '/assets/glass.glb';
       
-      '/src/assets/glass.glb',
-      
-    ];
+    
     
     // If we can't load the model, create a simple glasses placeholder
     const createPlaceholder = () => {
@@ -119,7 +117,7 @@ const ARGlasses: React.FC<ARGlassesProps> = ({ keypoints, canvasWidth, canvasHei
       loader.load(
         modelPaths[pathIndex],
         (gltf) => {
-          console.log('Glasses model loaded successfully from:', modelPaths[pathIndex]);
+          console.log('Glasses model loaded successfully from:', modelPaths);
           const model = gltf.scene;
           
           // Apply initial transformations
